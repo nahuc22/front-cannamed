@@ -7,7 +7,7 @@ interface CannabisLeafProps {
 
 export default function CannabisLeaf({ className = '', glow = true }: CannabisLeafProps) {
   const [processedSrc, setProcessedSrc] = useState<string | null>(null);
-  const src = '/src/assets/images/cannamed_isolated_leaf_1780361525104.png';
+  const src = new URL('../public/images/cannamed_isolated_leaf_1780361525104.png', import.meta.url).href;
 
   useEffect(() => {
     let active = true;

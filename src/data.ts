@@ -19,7 +19,7 @@ export const STRAINS: BudStrain[] = [
     lineage: 'Granddaddy Purple x OG Kush',
     floweringTime: '8-9 semanas',
     aroma: 'Uva madura con tonos terrosos profundos, pino herbal y un sutil fondo de lavanda silvestre.',
-    image: '/src/assets/images/cannamed_bud1_indica_1780360587835.png'
+    image: new URL('./public/images/cannamed_bud1_indica_1780360587835.png', import.meta.url).href
   },
   {
     id: 'sativa-golden',
@@ -39,7 +39,7 @@ export const STRAINS: BudStrain[] = [
     lineage: 'Super Lemon Haze x Kosher Kush',
     floweringTime: '9-10 semanas',
     aroma: 'Cítrico punzante a limón maduro con notas picantes de pimienta negra y madera de cedro.',
-    image: '/src/assets/images/cannamed_bud2_sativa_1780360601260.png'
+    image: new URL('./public/images/cannamed_bud2_sativa_1780360601260.png', import.meta.url).href
   },
   {
     id: 'cbd-emerald',
@@ -59,7 +59,7 @@ export const STRAINS: BudStrain[] = [
     lineage: 'Harlequin x Sour Tsunami',
     floweringTime: '8 semanas',
     aroma: 'Sándalo cálido, cerezas silvestres secas y un toque de almizcle herbal boscoso.',
-    image: '/src/assets/images/cannamed_bud3_cbd_1780360617247.png'
+    image: new URL('./public/images/cannamed_bud3_cbd_1780360617247.png', import.meta.url).href
   }
 ];
 
