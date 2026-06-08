@@ -1,0 +1,6 @@
+{
+  "name": "Cannamed",
+  "description": "Premium landing page for Cannamed NGO, utilizing dark and slate tones, medical cannabis aesthetics, high-end scroll parallax effects, and smooth typography.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
