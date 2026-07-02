@@ -112,15 +112,16 @@ export default function App() {
       {/* BACKGROUND WALLPAPER (Revealed through hollow cutout spaces) */}
       <div 
         id="bg-wallpaper"
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-45 mix-blend-lighten min-h-full"
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-45 mix-blend-lighten min-h-screen"
         style={{
           backgroundImage: `url('${HERO_BG}')`,
-          filter: 'contrast(1.15) brightness(0.6)'
+          filter: 'contrast(1.15) brightness(0.6)',
+          height: '100dvh'
         }}
       />
 
       {/* AMBIENT RADIAL GLOW (Behind elements) */}
-      <div id="ambient-overlay" className="absolute inset-0 z-[1] bg-radial-gradient from-transparent via-[#030303]/75 to-[#030303] pointer-events-none" />
+      <div id="ambient-overlay" className="fixed inset-0 z-[1] bg-radial-gradient from-transparent via-[#030303]/75 to-[#030303] pointer-events-none" />
 
       {/* TEXTO GIGANTE PARA SECCION FAQ */}
       <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden select-none">
