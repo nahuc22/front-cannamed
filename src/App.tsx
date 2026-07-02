@@ -35,6 +35,7 @@ import FlipCard from './components/FlipCard';
 // Images paths from step generations
 const HERO_BG = new URL('./public/images/cannamed_hero_bg_uploaded_1780361509856.png', import.meta.url).href;
 const PARALLAX_LEAF = new URL('./public/images/cannamed_isolated_leaf_1780361525104.png', import.meta.url).href;
+const VITAL_LOGO = new URL('./public/images/vital-logo.png', import.meta.url).href;
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -124,7 +125,7 @@ export default function App() {
 
       {/* TEXTO GIGANTE PARA SECCION FAQ */}
       <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden select-none">
-        <div className="sticky top-[64.8%] -left-32 sm:-left-40 md:-left-48 lg:-left-56 w-full flex flex-col justify-center items-start leading-[0.8] opacity-15">
+        <div className="hidden md:flex sticky top-[66%] lg:top-[64.8%] -left-32 sm:-left-40 md:-left-48 lg:-left-56 w-full flex-col justify-center items-start leading-[0.8] opacity-15">
           <h1 className="text-[120px] sm:text-[180px] md:text-[230px] lg:text-[280px] font-black tracking-tighter text-white mix-blend-difference">
             CANNA<br/>MED
           </h1>
@@ -159,33 +160,27 @@ export default function App() {
               
               {/* Brand Logo - Styled with Bold Typography specifications */}
               <div id="brand-logo" className="flex items-center gap-3 cursor-pointer" onClick={() => scrollTo('hero')}>
-                <div id="logo-icon" className="w-9 h-9 rounded-lg bg-gradient-to-tr from-cannamed-500 to-cannamed-600 flex items-center justify-center shadow-lg shadow-cannamed-500/20">
-                  <Leaf id="logo-svg" className="w-5 h-5 text-zinc-100" />
-                </div>
-                <div id="logo-text" className="flex flex-col">
-                  <span id="logo-title" className="font-sans text-2xl font-black tracking-tighter text-white leading-none">
-                    CNMD<span className="text-cannamed-600 font-bold">.</span>
-                  </span>
-                  <span id="logo-subtitle" className="font-mono text-[8px] tracking-[0.25em] text-zinc-500 uppercase font-bold mt-0.5">
-                    Cannabis Medicinal
-                  </span>
-                </div>
+                <img 
+                  src={VITAL_LOGO} 
+                  alt="VITAL CBD Logo" 
+                  className="h-20 w-auto object-contain"
+                />
               </div>
 
               {/* Desktop Menu - High contrast elegant typography style */}
-              <nav id="desktop-nav" className="hidden md:flex items-center gap-10 text-[10px] uppercase tracking-[0.32em] font-bold text-zinc-400">
-                <button id="btn-nav-alianza" onClick={() => scrollTo('alianza')} className="hover:text-white transition-colors cursor-pointer text-left">
-                  La Alianza
+              <nav id="desktop-nav" className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.28em] font-extrabold text-zinc-200">
+                <button id="btn-nav-alianza" onClick={() => scrollTo('alianza')} className="hover:text-white transition-colors cursor-pointer text-left font-black">
+                  Nosotros
                 </button>
-                <button id="btn-nav-vacio" onClick={() => scrollTo('el-vacio')} className="hover:text-white transition-colors cursor-pointer text-left flex items-center gap-2">
-                  <span className="inline-block w-1.5 h-1.5 bg-cannamed-600 rounded-full animate-pulse"></span>
-                  El Vacío
+                <button id="btn-nav-vacio" onClick={() => scrollTo('el-vacio')} className="hover:text-white transition-colors cursor-pointer text-left flex items-center gap-2 font-black">
+                  {/* <span className="inline-block w-1.5 h-1.5 bg-cannamed-600 rounded-full animate-pulse"></span> */}
+                  Quienes somos
                 </button>
-                <button id="btn-nav-flores" onClick={() => scrollTo('flores')} className="hover:text-white transition-colors cursor-pointer text-left">
-                  Colección Floral
+                <button id="btn-nav-flores" onClick={() => scrollTo('flores')} className="hover:text-white transition-colors cursor-pointer text-left font-black">
+                  Productos
                 </button>
-                <button id="btn-nav-faq" onClick={() => scrollTo('faq')} className="hover:text-white transition-colors cursor-pointer text-left">
-                  Garantía Terapéutica
+                <button id="btn-nav-faq" onClick={() => scrollTo('faq')} className="hover:text-white transition-colors cursor-pointer text-left font-black">
+                  Consultas
                 </button>
               </nav>
 
@@ -224,17 +219,16 @@ export default function App() {
                 >
                   <div id="mobile-nav-links" className="flex flex-col gap-5 px-6 py-8">
                     <button id="m-nav-alianza" onClick={() => scrollTo('alianza')} className="font-sans text-left text-sm uppercase font-bold tracking-widest text-zinc-300 hover:text-white">
-                      La Alianza
+                      Nosotros
                     </button>
                     <button id="m-nav-vacio" onClick={() => scrollTo('el-vacio')} className="font-sans text-left text-sm uppercase font-bold tracking-widest text-zinc-300 hover:text-white flex items-center gap-2">
-                      <span className="w-2 h-2 bg-cannamed-600 rounded-full animate-ping"></span>
-                      El Vacío Visual
+                      Quienes somos
                     </button>
                     <button id="m-nav-flores" onClick={() => scrollTo('flores')} className="font-sans text-left text-sm uppercase font-bold tracking-widest text-zinc-300 hover:text-white">
-                      Colección Floral
+                      Productos
                     </button>
                     <button id="m-nav-faq" onClick={() => scrollTo('faq')} className="font-sans text-left text-sm uppercase font-bold tracking-widest text-zinc-300 hover:text-white">
-                      Garantía Terapéutica
+                      Consultas
                     </button>
                     <div className="h-px bg-zinc-900 my-2" />
                     <button 
@@ -289,14 +283,14 @@ export default function App() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                   >
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 border border-white/[0.08] backdrop-blur-md mb-6 shadow-md shadow-black/80">
+                    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-zinc-900 border border-white/[0.08] backdrop-blur-md mb-6 shadow-md shadow-black/80">
                       <span className="w-2 h-2 rounded-full bg-cannamed-600 animate-ping"></span>
-                      <span className="font-mono text-[9px] text-cannamed-400 tracking-widest uppercase font-bold">Asociación Civil Cannábica Registrada</span>
+                      <span className="font-mono text-[9px] mt-[2px] text-cannamed-400 tracking-widest uppercase font-bold">Asociación Cannamed</span>
                     </div>
                     
                     <h1 className="font-serif text-5xl md:text-7xl font-semibold text-zinc-100 tracking-tight leading-[1.08] mb-6">
-                      Cuidado <span className="font-serif italic text-cannamed-500 font-normal">Orgánico.</span> <br />
-                      Estándar <span className="text-zinc-400 font-sans font-light">Terapéutico.</span>
+                      Cuidado <span className="font-sans text-cannamed-500 font-7xl">Orgánico</span> <br />
+                      Estándar <span className="text-zinc-400 font-sans font-light">Terapéutico</span>
                     </h1>
                     
                     <p className="font-sans text-base text-zinc-300 max-w-xl leading-relaxed mb-8">
@@ -332,11 +326,11 @@ export default function App() {
                   >
                     <div>
                       <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 font-bold">Pureza Registrada</p>
-                      <p className="font-serif italic text-2xl font-semibold text-white mt-1">98.9%</p>
+                      <p className="font-mono text-2xl font-semibold text-white mt-1">98.9%</p>
                     </div>
                     <div>
                       <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 font-bold">Afiliación Activa</p>
-                      <p className="font-sans text-2xl font-black text-white mt-1">1,400+</p>
+                      <p className="font-mono text-2xl font-black text-white mt-1">1,400+</p>
                     </div>
                     <div>
                       <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 font-bold">Cromatografías</p>
@@ -368,17 +362,17 @@ export default function App() {
 
                     <div className="space-y-6">
                       <div className="border-b border-white/[0.06] pb-5">
-                        <h3 className="font-mono text-zinc-500 text-[9px] tracking-widest uppercase mb-1 font-bold">Licencia de Autocultivo</h3>
-                        <p className="font-serif text-white italic text-lg font-medium">Bajo Protocolo REPROCANN</p>
-                        <p className="font-sans text-zinc-500 text-xs leading-relaxed mt-1.5">
+                        <h3 className="font-mono text-zinc-400 text-[9px] tracking-widest uppercase mb-1.5 font-bold">Licencia de Autocultivo</h3>
+                        <p className="font-sans text-cannamed-500 text-lg font-bold">BAJO PROTOCOLO REPROCANN</p>
+                        <p className="font-sans text-zinc-300 text-xs font-medium leading-relaxed mt-2">
                           Asistencia completa para tramitación de credenciales nacionales, transporte seguro y dosis terapéuticas.
                         </p>
                       </div>
 
                       <div className="border-b border-white/[0.06] pb-5">
-                        <h3 className="font-mono text-zinc-500 text-[9px] tracking-widest uppercase mb-1 font-bold">Sustrato 100% Viviente</h3>
-                        <p className="font-serif text-white italic text-lg font-medium">Cero Químicos de Humedad</p>
-                        <p className="font-sans text-zinc-500 text-xs leading-relaxed mt-1.5">
+                        <h3 className="font-mono text-zinc-400 text-[9px] tracking-widest uppercase mb-1.5 font-bold">Sustrato 100% Viviente</h3>
+                        <p className="font-sans text-cannamed-500 text-lg font-bold">CERO QUÍMICOS DE HUMEDAD</p>
+                        <p className="font-sans text-zinc-300 text-xs font-medium leading-relaxed mt-2">
                           Análisis microbiológicos recurrentes que validan la erradicación total de esporas, insecticidas o metales.
                         </p>
                       </div>
@@ -412,7 +406,7 @@ export default function App() {
                   <div className="lg:col-span-7">
                     <p className="font-mono text-[9px] uppercase tracking-widest text-[#1ca233] mb-2 font-bold">// Principios Orgánicos de Nuestra Alianza</p>
                     <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white tracking-tight leading-none">
-                      La Alianza Terapéutica Civil por el Autocultivo
+                      Vitalmed por el Autocultivo
                     </h2>
                   </div>
                   <div className="lg:col-span-5">
@@ -496,7 +490,7 @@ export default function App() {
                     frontClass="bg-white p-6 md:p-8 text-black flex flex-col justify-between h-full w-full shadow-md"
                     frontContent={
                       <div className="flex flex-col justify-between h-full w-full">
-                        <span className="font-mono text-[9px] tracking-widest text-zinc-500 uppercase font-bold">FOTOPERÍODO I</span>
+                        <span className="font-mono text-[9px] tracking-widest text-zinc-600 uppercase font-bold">FOTOPERÍODO I</span>
                         <p className="font-serif text-xl md:text-2xl font-bold leading-tight mt-4">18/6 Horas de Luz Activa</p>
                       </div>
                     }
@@ -514,7 +508,7 @@ export default function App() {
                           <Thermometer className="w-4 h-4 text-[#2c7238]" />
                           <span className="font-mono text-[9px] font-bold">TEMP: 24.2°C</span>
                         </div>
-                        <p className="font-sans text-xs text-zinc-500 leading-normal">Ambiente hidropónico certificado de flujo y humedad constantes.</p>
+                        <p className="font-sans text-xs text-zinc-600 leading-normal">Ambiente hidropónico certificado de flujo y humedad constantes.</p>
                       </div>
                     }
                     backImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
@@ -528,7 +522,7 @@ export default function App() {
                     frontContent={
                       <div className="flex flex-col justify-between h-full w-full">
                         <span className="font-mono text-[9px] tracking-wider text-cannamed-700 block font-bold">ESPECTRO PAR</span>
-                        <p className="font-serif italic text-base leading-snug font-semibold text-cannamed-900 mt-4">Luminancia óptima de absorción fitomedicinal celular.</p>
+                        <p className="font-serif font-bold text-base leading-snug text-cannamed-900 mt-4">Luminancia óptima de absorción fitomedicinal celular.</p>
                       </div>
                     }
                     backImage="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=600&q=80"
@@ -565,7 +559,7 @@ export default function App() {
                     frontContent={
                       <div className="flex flex-col justify-between h-full w-full">
                         <span className="font-mono text-[9px] text-zinc-400 uppercase font-bold">CBD ratio</span>
-                        <p className="font-serif italic text-3xl font-black text-cannamed-500 leading-none mt-4">2 : 1</p>
+                        <p className="font-serif font-black text-3xl text-cannamed-500 leading-none mt-4">2 : 1</p>
                       </div>
                     }
                     backImage="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=600&h=400&fit=crop"
@@ -578,7 +572,7 @@ export default function App() {
                     frontClass="bg-gradient-to-br from-cannamed-500 to-cannamed-600 p-6 md:p-8 text-white flex flex-col justify-between h-full w-full shadow-lg"
                     frontContent={
                       <div className="flex flex-col justify-between h-full w-full text-left">
-                        <span className="text-3xl font-light italic font-serif leading-none">03.</span>
+                        <span className="text-3xl font-bold font-serif leading-none">03.</span>
                         <div>
                           <span className="block font-mono text-[8.5px] tracking-widest text-white/80 uppercase">Cálices Curados</span>
                           <p className="font-sans font-bold text-xs mt-1 text-white">Sabor Puro, Extracto Genuino</p>
@@ -594,7 +588,7 @@ export default function App() {
                   <FlipCard
                     frontClass="bg-white p-6 md:p-8 text-black rounded-xl flex flex-col justify-end h-full w-full shadow-md"
                     frontContent={
-                      <p className="font-sans text-[11px] text-zinc-500 leading-relaxed text-left">Muestras analizadas químicamente por laboratorios universitarios fitocristalinos de alto rendimiento.</p>
+                      <p className="font-sans text-[11px] text-zinc-600 leading-relaxed text-left">Muestras analizadas químicamente por laboratorios universitarios fitocristalinos de alto rendimiento.</p>
                     }
                     backImage="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop"
                     backTitle="RIGOR DE LABORATORIO"
@@ -606,7 +600,7 @@ export default function App() {
                     frontClass="bg-zinc-100 p-6 md:p-8 text-black flex flex-col justify-between h-full w-full shadow-md"
                     frontContent={
                       <div className="flex flex-col justify-between h-full w-full text-left">
-                        <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase">TERPENO MAX</span>
+                        <span className="font-mono text-[9px] text-zinc-600 font-bold uppercase">TERPENO MAX</span>
                         <p className="font-sans font-bold text-xs tracking-tight text-[#1b6d27] mt-4">Mirceno Sedativo Profundo</p>
                       </div>
                     }
@@ -683,7 +677,7 @@ export default function App() {
                     <h3 className="font-serif text-2xl font-medium text-white group-hover:text-cannamed-600 transition-colors">
                       {strain.name}
                     </h3>
-                    <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider mt-1">
+                    <p className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider mt-1">
                       {strain.lineage}
                     </p>
                     
@@ -693,11 +687,11 @@ export default function App() {
 
                     <div className="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-zinc-900">
                       <div>
-                        <span className="block font-mono text-[9px] text-zinc-500 uppercase tracking-wider">Porcentaje THC</span>
+                        <span className="block font-mono text-[9px] text-zinc-400 uppercase tracking-wider">Porcentaje THC</span>
                         <span className="block font-sans font-medium text-zinc-200 text-sm mt-0.5">{strain.thc}</span>
                       </div>
                       <div>
-                        <span className="block font-mono text-[9px] text-zinc-500 uppercase tracking-wider">Porcentaje CBD</span>
+                        <span className="block font-mono text-[9px] text-zinc-400 uppercase tracking-wider">Porcentaje CBD</span>
                         <span className="block font-sans font-medium text-zinc-200 text-sm mt-0.5">{strain.cbd}</span>
                       </div>
                     </div>
