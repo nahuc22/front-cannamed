@@ -75,9 +75,6 @@ export default function App() {
   const leafScale = useTransform(springScroll, [0, 0.4, 0.8, 1], [0.85, 1.25, 0.95, 0.7]);
   const leafOpacity = useTransform(springScroll, [0, 0.1, 0.9, 1], [0.75, 0.95, 0.95, 0]);
 
-  // Transform for secondary subtle floating elements
-  const secondaryLeafY = useTransform(springScroll, [0, 1], [50, 800]);
-  const secondaryLeafRotate = useTransform(springScroll, [0, 1], [-30, -180]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -258,17 +255,6 @@ export default function App() {
             <CannabisLeaf glow={true} className="w-full h-full" />
           </motion.div>
 
-          {/* SECONDARY DEEP LEAF PATH PARALLAX EFFECT */}
-          <motion.div 
-            id="scroll-parallax-deep-leaf"
-            style={{
-              y: secondaryLeafY,
-              rotate: secondaryLeafRotate,
-            }}
-            className="fixed left-[2%] bottom-[10%] w-16 h-16 md:w-28 md:h-28 z-10 pointer-events-none select-none opacity-20 blur-xs filter saturate-70 drop-shadow-[0_0_15px_rgba(33,197,94,0.18)]"
-          >
-            <CannabisLeaf glow={false} className="w-full h-full hue-rotate-15" />
-          </motion.div>
 
           <main id="main-content" className="relative z-20 w-full overflow-hidden">
             
@@ -280,7 +266,8 @@ export default function App() {
                 <div id="hero-text-block" className="lg:col-span-7 flex flex-col justify-center text-left">
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                   >
                     <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-zinc-900 border border-white/[0.08] backdrop-blur-md mb-6 shadow-md shadow-black/80">
@@ -320,8 +307,9 @@ export default function App() {
                   <motion.div 
                     id="hero-stats-strip"
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.95 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
+                    whileInView={{ opacity: 0.95 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
                     className="mt-12 pt-8 border-t border-white/[0.08] flex flex-wrap gap-x-12 gap-y-6"
                   >
                     <div>
@@ -343,8 +331,9 @@ export default function App() {
                 <div id="hero-right-panel" className="lg:col-span-5 flex items-center justify-center relative">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2, duration: 0.8, ease: 'easeOut' }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ delay: 0.1, duration: 0.8, ease: 'easeOut' }}
                     className="w-full max-w-sm rounded-[2rem] bg-[#090909]/90 border border-white/[0.08] p-8 backdrop-blur-xl shadow-2xl shadow-black relative"
                   >
                     <div className="absolute top-0 right-12 w-6 h-px bg-cannamed-550" />
