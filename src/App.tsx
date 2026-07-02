@@ -112,11 +112,11 @@ export default function App() {
       {/* BACKGROUND WALLPAPER (Revealed through hollow cutout spaces) */}
       <div 
         id="bg-wallpaper"
-        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-45 mix-blend-lighten"
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-45 mix-blend-lighten min-h-screen"
         style={{
           backgroundImage: `url('${HERO_BG}')`,
-          backgroundAttachment: 'fixed',
-          filter: 'contrast(1.15) brightness(0.6)'
+          filter: 'contrast(1.15) brightness(0.6)',
+          height: '100dvh'
         }}
       />
 
