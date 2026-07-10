@@ -387,79 +387,155 @@ export default function App() {
             </section>
 
             {/* SECTION: LA ALIANZA (Opaque solid elegant section) */}
-            <section id="alianza" className="relative z-30 bg-[#060606] py-24 px-6 md:px-12 border-y border-white/[0.06]">
-              <div className="w-full max-w-7xl mx-auto">
-                
-                {/* Section Header */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
-                  <div className="lg:col-span-7">
-                    <p className="font-mono text-[9px] uppercase tracking-widest text-[#1ca233] mb-2 font-bold">// Principios Orgánicos de Nuestra Alianza</p>
-                    <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white tracking-tight leading-none">
-                      Vitalmed por el Autocultivo
-                    </h2>
-                  </div>
-                  <div className="lg:col-span-5">
-                    <p className="font-sans text-zinc-400 leading-relaxed text-sm md:text-base">
-                      Establecemos un nexo institucional transparente entre la naturaleza vegetal y la fitomedicina integrativa clínicamente probada con análisis moleculares profundos.
-                    </p>
-                  </div>
-                </div>
+            <section
+  id="alianza"
+  className="relative z-30 bg-[#060606] border-y border-white/[0.06] py-20 md:py-24 px-6 md:px-10 xl:px-12"
+>
+  <div className="mx-auto w-full max-w-7xl">
 
-                {/* 3 Pillars layout */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  
-                  <div className="bg-[#090909] hover:bg-[#0d0d0d] rounded-2xl border border-white/[0.06] hover:border-cannamed-500/20 shadow-xl transition-all group overflow-hidden">
-                    <div className="w-full h-[250px] overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=300&h=250&fit=crop" 
-                        alt="Compromiso Sanitario" 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-8">
-                      <h3 className="font-serif text-xl font-medium text-white mb-3">Compromiso Sanitario</h3>
-                      <p className="font-sans text-xs text-zinc-400 leading-relaxed">
-                        Ofrecemos fitoflores libres de agrotóxicos perjudiciales. Producimos de manera orgánica enriquecida con microorganismos edáficos vivientes de primera calidad.
-                      </p>
-                    </div>
-                  </div>
+    {/* Header */}
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-16">
 
-                  <div className="bg-[#090909] hover:bg-[#0d0d0d] rounded-2xl border border-white/[0.06] hover:border-cannamed-500/20 shadow-xl transition-all group overflow-hidden">
-                    <div className="w-full h-[250px] overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=300&h=250&fit=crop" 
-                        alt="Análisis Cromatográfico" 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-8">
-                      <h3 className="font-serif text-xl font-medium text-white mb-3">Análisis Cromatográfico</h3>
-                      <p className="font-sans text-xs text-zinc-400 leading-relaxed">
-                        Cada lote de flores y aceites es analizado rigurosamente. Develamos con precisión el perfil porcentual de cannabinoides mayoritarios, garantizando dosis uniformes.
-                      </p>
-                    </div>
-                  </div>
+      <div className="lg:col-span-7">
 
-                  <div className="bg-[#090909] hover:bg-[#0d0d0d] rounded-2xl border border-white/[0.06] hover:border-cannamed-500/20 shadow-xl transition-all group overflow-hidden">
-                    <div className="w-full h-[250px] overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=300&h=250&fit=crop" 
-                        alt="Cobijo Estatutario Legal" 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-8">
-                      <h3 className="font-serif text-xl font-medium text-white mb-3">Cobijo Estatutario Legal</h3>
-                      <p className="font-sans text-xs text-zinc-400 leading-relaxed">
-                        Protegemos y amparamos el derecho legítimo de nuestros afiliados, asegurando el cumplimiento absoluto de legislaciones nacionales y licencias colectivas médicas.
-                      </p>
-                    </div>
-                  </div>
+        <p className="font-mono text-[12px] md:text-[13px] uppercase tracking-[0.35em] text-cannamed-600 font-semibold mb-4">
+          // Principios Orgánicos de nuestra organización
+        </p>
 
-                </div>
+        <h2
+          className="font-sans font-bold leading-none tracking-[-0.04em] text-zinc-50"
+          style={{ fontSize: "clamp(2.2rem,4vw,3.5rem)" }}
+        >
+          Vitalmed por el Autocultivo
+        </h2>
 
-              </div>
-            </section>
+      </div>
+
+      <div className="lg:col-span-5">
+
+        <p
+          className="font-sans leading-8 text-zinc-500 max-w-lg"
+          style={{ fontSize: "clamp(.95rem,1vw,1rem)" }}
+        >
+          Establecemos un nexo institucional transparente entre la naturaleza
+          vegetal y la fitomedicina integrativa clínicamente probada con
+          análisis moleculares profundos.
+        </p>
+
+      </div>
+
+    </div>
+
+    {/* Cards */}
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+
+      {/* Card */}
+
+      <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.05] bg-[#0A0A0A] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-cannamed-500/20 hover:bg-[#0D5719] hover:shadow-2xl">
+
+        <div className="aspect-[4/3] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&fit=crop"
+            alt="Compromiso Sanitario"
+            className="h-full w-full object-cover brightness-[0.96] contrast-105 transition-all duration-700 group-hover:scale-105"
+          />
+        </div>
+
+        <div className="flex flex-1 flex-col p-8 md:p-9">
+
+          <h3
+            className="font-sans font-semibold text-zinc-50 leading-tight mb-2 min-h-[52px]"
+            style={{ fontSize: "clamp(1.35rem,1.2vw,1.6rem)" }}
+          >
+            Compromiso Sanitario
+          </h3>
+
+          <p
+            className="font-sans text-zinc-400 leading-7 flex-1"
+            style={{ fontSize: "clamp(.88rem,.75vw,.95rem)" }}
+          >
+            Ofrecemos fitoflores libres de agrotóxicos perjudiciales.
+            Producimos de manera orgánica enriquecida con microorganismos
+            edáficos vivientes de primera calidad.
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* Card */}
+
+      <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.05] bg-[#0A0A0A] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-cannamed-500/20 hover:bg-[#0D5719] hover:shadow-2xl">
+
+        <div className="aspect-[4/3] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&fit=crop"
+            alt="Análisis Cromatográfico"
+            className="h-full w-full object-cover brightness-[0.96] contrast-105 transition-all duration-700 group-hover:scale-105"
+          />
+        </div>
+
+        <div className="flex flex-1 flex-col p-8 md:p-9">
+
+          <h3
+            className="font-sans font-semibold text-zinc-50 leading-tight mb-2 min-h-[52px]"
+            style={{ fontSize: "clamp(1.35rem,1.2vw,1.6rem)" }}
+          >
+            Análisis Cromatográfico
+          </h3>
+
+          <p
+            className="font-sans text-zinc-400 leading-7 flex-1"
+            style={{ fontSize: "clamp(.88rem,.75vw,.95rem)" }}
+          >
+            Cada lote de flores y aceites es analizado rigurosamente.
+            Develamos con precisión el perfil porcentual de cannabinoides
+            mayoritarios, garantizando dosis uniformes.
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* Card */}
+
+      <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.05] bg-[#0A0A0A] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-cannamed-500/20 hover:bg-[#0D5719] hover:shadow-2xl sm:col-span-2 xl:col-span-1">
+
+        <div className="aspect-[4/3] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=600&fit=crop"
+            alt="Cobijo Estatutario Legal"
+            className="h-full w-full object-cover brightness-[0.96] contrast-105 transition-all duration-700 group-hover:scale-105"
+          />
+        </div>
+
+        <div className="flex flex-1 flex-col p-8 md:p-9">
+
+          <h3
+            className="font-sans font-semibold text-zinc-50 leading-tight mb-2 min-h-[52px]"
+            style={{ fontSize: "clamp(1.35rem,1.2vw,1.6rem)" }}
+          >
+            Cobijo Estatutario Legal
+          </h3>
+
+          <p
+            className="font-sans text-zinc-400 leading-7 flex-1"
+            style={{ fontSize: "clamp(.88rem,.75vw,.95rem)" }}
+          >
+            Protegemos y amparamos el derecho legítimo de nuestros afiliados,
+            asegurando el cumplimiento absoluto de legislaciones nacionales y
+            licencias colectivas médicas.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
             {/* SECTION: EL VACÍO (Totally transparent section revealing fixed parallax wallpaper behind) */}
             <section id="el-vacio" className="relative z-20 bg-transparent py-24 px-6 md:px-12">
